@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>stopwatch</title>
+    <style>
+
+#parent{display: flex;}
+.h2{font-size: 20x;}
+#parent2{display: flex;}
+    </style>
+</head>
+<body>
+<div id="parent">
+    <h1 id="hour">0</h1>
+    <h1>:</h1>
+    <h1 id="minute">0</h1>
+    <h1>:</h1>
+    <h1 id="seconds">00</h1>
+</div>
+
+<button id="start">start</button>
+<button id="stop">stop</button>
+<button id="reset">reset</button>
+
+</html>
+
+<script>
+  
+  let h=document.getElementById("hour")
+  let m=document.getElementById("minute")
+let s=document.getElementById("seconds")
+let minute=5
+let second=300
+let hour=0
+
+let start=document.getElementById("start")
+let stop=document.getElementById("stop")
+let reset=document.getElementById("reset")
+let id;
+start.addEventListener("click",function(){
+    id=setInterval(()=>{
+second--
+let checkone=Math.floor(second%60)
+ minute=Math.floor(second/60)
+hour=Math.floor(minute/60)
+s.innerText=checkone
+
+m.innerText=minute
+h.innerText=hour
+},1000)
+
+})
+stop.addEventListener("click",function(){
+
+    clearInterval(id)
+})
+
+reset.addEventListener("click",function(){
+clearInterval(id)
+h.innerText=0
+m.innerText=0
+s.innerText=0
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

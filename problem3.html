@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>slides</title>   
+</head>
+<body>
+
+<img>
+<button id="start">start</button>
+<button id="stop">stop</button><br>
+
+
+</body>
+</html>
+<script>
+let array=[
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnv05OiXwxtbjrvtyuxt6xSTUo25190kcF4A&usqp=CAU",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaXgtKrAvsSpl0LkcmEM8x48awE-kZfRC4vA&usqp=CAU",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqQMwq_mZ2I9qpXPhmIeJ5on2jZTavrF65Kw&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3CQDEO83utmrNSsVt4QtJrmGqM2Dg0gej5g&usqp=CAU",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk9Yl6zVhsskPJGKn-YMB2pT2UcGNle8n8ew&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK0EztGrrGWCA9CYjGkTmcQEmmqdDQaxLvQg&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ61yrH-uBgiaXUvYiH8A2tMofDJrhHtdBJQ&usqp=CAU",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-vAZgKtu42Lpm-FY3nc17ReUbB-NFnurwoQ&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCZlf5lc5tX-0gY-y94pGS0mQdL-D0lCH2OQ&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnv05OiXwxtbjrvtyuxt6xSTUo25190kcF4A&usqp=CAU"
+
+]
+let image=0
+let stop=document.getElementById("stop")
+let start=document.getElementById("start")
+let clear;
+let select=document.querySelector("img")
+let next=document.getElementById("next")
+let previous=document.getElementById("previous")
+select.setAttribute("src",array[image])
+start.addEventListener("click",function(){
+    select.setAttribute("src",array[image])
+
+clear=setInterval(()=>{
+image++
+if(image>=9){
+
+    select.setAttribute("src",array[0])
+
+
+}else{
+select.setAttribute("src",array[image])}
+
+}
+
+
+
+,2000)
+
+
+stop.addEventListener("click",function(){
+clearInterval(clear)
+
+})
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
